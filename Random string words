@@ -1,0 +1,23 @@
+package com.example.mine
+
+import android.annotation.SuppressLint
+import android.os.Bundle
+import android.widget.Button
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+
+
+class MainActivity : AppCompatActivity() {
+    @SuppressLint("SetTextI18n")
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+    val tap : Button = findViewById(R.id.button)
+        val myArray = arrayOf("hardworking" , "lazy" , "somewhat lazy" , "very lazy" , "dedicated")
+        val text : TextView = findViewById(R.id.bio)
+        val textResult = myArray
+        tap.setOnClickListener {
+            text.text = textResult.random()
+        }
+    }
+}
